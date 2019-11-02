@@ -1,0 +1,303 @@
+%%%
+%%% List of acronyms and abbreviations
+%%%
+
+% to be used with the Latex package "acro"
+%\usepackage{acro}
+%\acsetup{list-name={Abbreviations}, list-style=extra-tabular, list-heading=chapter*}
+%\input{acronyms}
+
+
+
+%%%
+%%% Classes available
+%%%
+
+% acronyms are sorted according to their main class
+
+% signal-parameter: analog and digital signal parameters, e.g. SNR, SNDR, etc.
+% hardware-general: generic hardware, e.g. IC
+% hardware-analog-mixed: analog and mixed signal electronics, e.g. ADCs, DACs, OPAMPs, filters, etc.
+% hardware-digital: digital electronics, e.g. microcontroller, FPGA, DSP
+% interfaces: interface abbreviations and acronyms
+
+%%%
+%%% acronym list
+%%%
+
+%%% prototype of definition
+%\DeclareAcronym{}{
+%  short = {},
+%  long  = {},
+%  short-plural = {},
+%  short-plural-form = {},
+%  long-plural = {},
+%  long-plural-form = {},
+%  class = {},
+%  cite  = {}
+%}
+
+%%
+%% signal-parameter
+%%
+
+\DeclareAcronym{SNR}{
+  short = {SNR},
+  long  = {signal-to-noise ratio},
+%  short-plural = {},
+%  short-plural-form = {},
+%  long-plural = {},
+%  long-plural-form = {},
+  class = {signal-parameter}
+%  cite  = {}
+}
+
+\DeclareAcronym{SNDR}{
+  short = {SNDR},
+  long  = {signal-to-noise-and-distortion ratio},
+%  short-plural = {},
+%  short-plural-form = {},
+%  long-plural = {},
+%  long-plural-form = {},
+  class = {signal-parameter}
+%  cite  = {}
+}
+
+\DeclareAcronym{THD}{
+  short = {THD},
+  long  = {total harmonic distortion},
+%  short-plural = {},
+%  short-plural-form = {},
+%  long-plural = {},
+%  long-plural-form = {},
+  class = {signal-parameter}
+%  cite  = {}
+}
+
+\DeclareAcronym{RMS}{
+  short = {RMS},
+  long  = {root mean square},
+%  short-plural = {},
+%  short-plural-form = {},
+%  long-plural = {},
+%  long-plural-form = {},
+  class = {signal-parameter}
+%  cite  = {}
+}
+
+
+%%
+%% hardware-general
+%%
+
+\DeclareAcronym{IC}{
+  short = {IC},
+  long  = {integrated circuit},
+%  short-plural = {},
+  short-plural-form = {ICs},
+%  long-plural = {},
+  long-plural-form = {integrated circuits},
+  class = {hardware-general}
+%  cite  = {}
+}
+
+\DeclareAcronym{RF}{
+  short = {RF},
+  long  = {radio frequency},
+%  short-plural = {},
+%  short-plural-form = {},
+%  long-plural = {},
+%  long-plural-form = {},
+  class = {hardware-general}
+%  cite  = {}
+}
+
+\DeclareAcronym{EMI}{
+  short = {EMI},
+  long  = {electromagnetic interference},
+%  short-plural = {},
+%  short-plural-form = {},
+%  long-plural = {},
+%  long-plural-form = {},
+  class = {hardware-general}
+%  cite  = {}
+}
+
+\DeclareAcronym{ENIG}{
+  short = {ENIG},
+  long  = {electroless nickel immersion gold},
+%  short-plural = {},
+%  short-plural-form = {},
+%  long-plural = {},
+%  long-plural-form = {},
+  class = {hardware-general}
+%  cite  = {}
+}
+
+
+%%
+%% hardware-analog-mixed
+%%
+
+\DeclareAcronym{ADC}{
+  short = {ADC},
+  long  = {analog-to-digital converter},
+%  short-plural = {},
+  short-plural-form = {ADCs},
+%  long-plural = {},
+  long-plural-form = {analog-to-digital converters},
+  class = {hardware-analog-mixed}
+%  cite  = {}
+}
+
+\DeclareAcronym{DAC}{
+  short = {DAC},
+  long  = {digital-to-analog converter},
+%  short-plural = {},
+  short-plural-form = {DACs},
+%  long-plural = {},
+  long-plural-form = {digital-to-analog converters},
+  class = {hardware-analog-mixed}
+%  cite  = {}
+}
+
+\DeclareAcronym{PLL}{
+  short = {PLL},
+  long  = {phase-locked loop},
+%  short-plural = {},
+  short-plural-form = {PLLs},
+%  long-plural = {},
+  long-plural-form = {phase-locked loops},
+  class = {hardware-analog-mixed}
+%  cite = {}
+}
+
+\DeclareAcronym{VCO}{
+  short = {VCO},
+  long  = {voltage-controlled oscillator},
+%  short-plural = {},
+  short-plural-form = {VCOs},
+%  long-plural = {},
+  long-plural-form = {voltage-controlled oscillators},
+  class = {hardware-analog-mixed}
+%  cite = {}
+}
+
+\DeclareAcronym{OCXO}{
+  short = {OCXO},
+  long  = {oven-stabilized crystal oscillator},
+%  short-plural = {},
+  short-plural-form = {OCXOs},
+%  long-plural = {},
+  long-plural-form = {oven-stabilized crystal oscillators},
+  class = {hardware-analog-mixed}
+%  cite = {}
+}
+
+\DeclareAcronym{TCXO}{
+  short = {TCXO},
+  long  = {temperature-compensated crystal oscillator},
+%  short-plural = {},
+  short-plural-form = {TCXOs},
+%  long-plural = {},
+  long-plural-form = {temperature-compensated crystal oscillators},
+  class = {hardware-analog-mixed}
+%  cite = {}
+}
+
+\DeclareAcronym{SAW}{
+  short = {SAW},
+  long  = {surface acoustic wave},
+%  short-plural = {},
+%  short-plural-form = {},
+%  long-plural = {},
+%  long-plural-form = {},
+  class = {hardware-analog-mixed}
+%  cite = {}
+}
+
+\DeclareAcronym{LDO}{
+  short = {LDO regulator},
+  long  = {low-dropout regulator},
+%  short-plural = {},
+%  short-plural-form = {},
+%  long-plural = {},
+%  long-plural-form = {},
+  class = {hardware-analog-mixed}
+%  cite = {}
+}
+
+%%
+%% hardware-digital
+%%
+
+\DeclareAcronym{FPGA}{
+  short = {FPGA},
+  long  = {field programmable gate array},
+%  short-plural = {},
+  short-plural-form = {FPGAs},
+%  long-plural = {},
+  long-plural-form = {field programmable gate arrays},
+  class = {hardware-digital}
+%  cite = {}
+}
+
+\DeclareAcronym{DSP}{
+  short = {DSP},
+  long  = {digital signal processor},
+%  short-plural = {},
+  short-plural-form = {DSPs},
+%  long-plural = {},
+  long-plural-form = {digital signal processors},
+  class = {hardware-digital}
+%  cite = {}
+}
+
+
+%%
+%% interfaces
+%%
+
+\DeclareAcronym{PECL}{
+  short = {PECL},
+  long  = {positive emitter-coupled logic},
+%  short-plural = {},
+%  short-plural-form = {},
+%  long-plural = {},
+%  long-plural-form = {},
+  class = {interfaces}
+%  cite = {}
+}
+
+\DeclareAcronym{LVDS}{
+  short = {LVDS},
+  long  = {low-voltage differential signaling},
+%  short-plural = {},
+%  short-plural-form = {},
+%  long-plural = {},
+%  long-plural-form = {},
+  class = {interfaces}
+%  cite = {}
+}
+
+\DeclareAcronym{SPI}{
+  short = {SPI},
+  long  = {serial peripheral interface},
+%  short-plural = {},
+  short-plural-form = {SPIs},
+%  long-plural = {},
+  long-plural-form = {serial peripheral interfaces},
+  class = {interfaces}
+%  cite = {}
+}
+
+
+
+
+
+
+
+
+
+
+

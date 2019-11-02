@@ -1,0 +1,154 @@
+% LaTex template for technical documentations
+%
+% This template follows the KISS-approach: keep it simple and stupid!
+% It is using the KOMA script and is intended to be compiled using pdflatex and biber
+% Options are switched by commenting them in or out
+
+%% ----------------------------------------------------------------------------
+%% DOCUMENT SETUP
+
+\documentclass[
+	a4paper,  	% papersize: a4paper, a5paper, letterpaper
+	BCOR=0mm,	% binding correction
+	12pt,		% fontsize: 10pt, 11pt, 12pt
+	oneside,	% paper usage: oneside, twoside
+%	landscape,	% enables the landscape orientation
+	onecolumn,	% column setting: onecolumn, twocolumn
+%	openany, 	% open chapter position setting (only report and book): openright, openany
+]
+{scrartcl}	% article
+%{scrreprt}	% report
+%{scrbook}	% book
+
+%% ----------------------------------------------------------------------------
+% PAGE STYLE
+
+\usepackage[
+%	headsepline,	% enable header seperation line
+%	footsepline,	% enable footer seperation line
+]{scrlayer-scrpage}
+
+\clearpairofpagestyles
+
+\ohead{}		% content of right/outer header
+\chead{}		% content of center header
+\ihead{}		% content of left/inner header
+
+\ofoot{}		% content of right/outer footer
+\cfoot{\pagemark}		% content of center footer
+\ifoot{}		% content of left/inner footer
+
+
+%% ----------------------------------------------------------------------------
+%% DOCUMENT author & title
+
+\newcommand{\documentauthor}{Author}
+\newcommand{\documenttitle}{Title}
+\newcommand{\documentsubtitle}{Subtitle}
+\newcommand{\documentdate}{\today}
+
+%% ----------------------------------------------------------------------------
+%% PACKAGES
+
+\usepackage[english]{babel}		% english dictionary
+\usepackage[utf8]{inputenc}		% input encoding
+\usepackage[T1]{fontenc}		% font encoding in final document
+
+\usepackage{amsmath,amssymb,amstext}	% math symbols and stuff
+\usepackage{enumitem}			% small itemize
+\usepackage{units}				% simple technical units
+\usepackage{siunitx}			% SI units, unit prefixes and precise type setting of numbers with units
+
+\usepackage[			% for hyperlinks in the document
+	backref=true,		% backwards reference in bibliography
+	bookmarks=true,		% create PDF bookmarks
+	colorlinks=true,	% generate colored links
+	linkcolor=blue,		% color for links
+	citecolor=blue,		% color for cites
+	filecolor=blue,		% color for local file URLs
+	runcolor=blue,		% color for run links
+	urlcolor=blue,		% color for URLs
+]{hyperref}
+
+\usepackage{eso-pic}			% optional, for absolute placement of titlepace logos
+\usepackage[pdftex]{graphicx}	% grpahics package, option set for pdflatex compiler. [dvips] needed for DVI/PS compiler
+
+%% ----------------------------------------------------------------------------
+%% MACROS
+
+% generate figure environment
+% usage: \placefigure{<reference>}{<path>}{<width_in_fraction_of textwidth>}{<caption>}
+\newcommand{\placefigure}[4]{
+	\begin{figure}[htp]
+		\centering
+		\includegraphics[width=#3\textwidth]{figures/#2}
+		\caption{#4}
+		\label{#1}
+	\end{figure}
+}
+
+%% ----------------------------------------------------------------------------
+%% ACRONYMS
+
+% NOTE: \acsetup defines name and style of acronym listing.
+% Please adjust list-heading to fit your document class, either section* or chapter*
+\usepackage{acro}
+\acsetup{list-name={Abbreviations}, list-style=extra-tabular, list-heading=section*}
+\input{acronyms}
+
+%% ----------------------------------------------------------------------------
+%% BIBLIOGRAPHY
+
+\usepackage[backend=biber,	% using biber to compile references
+	style=numeric,			% uses numeric indicies
+	backref=true, 			% create backward references
+	natbib=true, 			%
+	hyperref=true, 			% use hyperref package to create links
+	sorting=none 			% sort none orders by occurence
+]{biblatex}
+
+\addbibresource{references.bib}
+
+%% ----------------------------------------------------------------------------
+
+\begin{document}
+\pagenumbering{roman}	% pagenumbering options: roman, Roman, arabic, alph, Alph
+
+
+%% ----------------------------------------------------------------------------
+%% TITLE PAGE
+
+%\input{titlepages/simple_titlepage}
+\input{titlepages/tug_titlepage}
+
+
+%% ----------------------------------------------------------------------------
+%% TABLE OF CONTENT, LISTS OF ...
+
+\tableofcontents
+\listoffigures
+%\listoftables
+\printacronyms		% needs package acro to work
+
+\newpage
+
+%% ----------------------------------------------------------------------------
+%% MAIN CONTENT
+
+\pagenumbering{arabic}	% pagenumbering options: roman, Roman, arabic, alph, Alph
+
+% document content is inserted here. \input and \include may be used
+%\input{content}
+
+
+%% ----------------------------------------------------------------------------
+%% BIBLIOGRAPHY
+
+\newpage
+\printbibliography		% print bibliography
+
+%% ----------------------------------------------------------------------------
+\end{document}
+
+
+
